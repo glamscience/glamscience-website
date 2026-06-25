@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlamScience — For the deeply curious.</title>
+  <meta name="description" content="A science and ideas publication for the deeply curious. Science in our lives, big ideas, the future, and the builders shaping it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #111111;
+      --cream: #FAF6EC;
+      --greige: #D9D3C7;
+      --greige-bg: #EDE9DF;
+      --burgundy: #7A1F3D;
+      --muted: #6b6560;
+      --faint: #9a9490;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 52px;
+      border-bottom: 1px solid var(--greige);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-link {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--black);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav-link:hover { color: var(--burgundy); }
+
+    .nav-subscribe {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--cream);
+      background: var(--burgundy);
+      padding: 11px 24px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+
+    .nav-subscribe:hover { background: #5e1830; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 100px 40px 88px;
+      border-bottom: 1px solid var(--greige);
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5.5vw, 68px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+    .hero-headline-accent {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5.5vw, 68px);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.15;
+      color: var(--burgundy);
+      margin-bottom: 36px;
+    }
+
+    .hero-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--greige);
+      margin: 0 auto 32px;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      font-weight: 300;
+      max-width: 500px;
+      margin: 0 auto 52px;
+    }
+
+    /* FORM */
+    .form-row {
+      display: flex;
+      max-width: 480px;
+      margin: 0 auto 16px;
+    }
+
+    .form-input {
+      flex: 1;
+      padding: 16px 20px;
+      background: transparent;
+      border: 1px solid var(--greige);
+      border-right: none;
+      color: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input::placeholder { color: var(--faint); }
+    .form-input:focus { border-color: var(--black); }
+
+    .form-btn {
+      padding: 16px 28px;
+      background: var(--burgundy);
+      color: var(--cream);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .form-btn:hover { background: #5e1830; }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--faint);
+      font-weight: 300;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* PILLARS */
+    .pillars-section {
+      background: var(--greige-bg);
+      padding: 72px 52px;
+      text-align: center;
+    }
+
+    .pillars-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--burgundy);
+      margin-bottom: 12px;
+    }
+
+    .pillars-rule {
+      width: 32px;
+      height: 1px;
+      background: var(--burgundy);
+      margin: 0 auto 52px;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 960px;
+      margin: 0 auto;
+      border: 1px solid var(--greige);
+    }
+
+    .pillar {
+      background: var(--greige-bg);
+      padding: 40px 24px;
+      text-align: center;
+      border-right: 1px solid var(--greige);
+    }
+
+    .pillar:last-child { border-right: none; }
+
+    .pillar-name {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .pillar-desc {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      padding: 28px 52px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant', serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+
+    .footer-taglines {
+      font-size: 11px;
+      color: #444;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .footer-social a {
+      color: #555;
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      border-top: 1px solid #1e1e1e;
+      margin-top: 20px;
+      padding-top: 16px;
+      text-align: center;
+      font-size: 11px;
+      color: #333;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { padding: 18px 24px; }
+      .hero { padding: 72px 24px 64px; }
+      .form-row { max-width: 100%; }
+      .pillars-section { padding: 56px 24px; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+      .pillar { border-bottom: 1px solid var(--greige); }
+      .pillar:nth-child(2n) { border-right: none; }
+      footer { padding: 24px 24px 20px; }
+      .footer-top { flex-direction: column; gap: 20px; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .pillar { border-right: none; }
+      .nav-link { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">Glamscience</a>
+    <div class="nav-right">
+      <a class="nav-link" href="#">About</a>
+      <a class="nav-subscribe" href="#">Subscribe</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <h1 class="hero-headline">Exploring the present.</h1>
+      <span class="hero-headline-accent">Shaping the future.</span>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">GlamScience is a modern media brand for the deeply curious. We explore the ideas, technologies, and people shaping the future of our world.</p>
+
+      <!-- REPLACE button onclick with your Beehiiv form submission -->
+      <div class="form-row">
+        <input class="form-input" type="email" placeholder="Enter your email" />
+        <button class="form-btn" type="button">Subscribe</button>
+      </div>
+      <p class="form-note">No spam. Unsubscribe anytime.</p>
+    </section>
+
+    <section class="pillars-section">
+      <div class="pillars-eyebrow">What we cover</div>
+      <div class="pillars-rule"></div>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <div class="pillar-name">The Future</div>
+          <p class="pillar-desc">Emerging technologies, industries, and trends shaping what comes next.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-name">Science in Our Lives</div>
+          <p class="pillar-desc">The science behind everyday decisions, habits, and the human body.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-name">Big Ideas</div>
+          <p class="pillar-desc">Intellectual territory worth exploring. Questions that don't have easy answers but deserve serious ones.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-name">Builders</div>
+          <p class="pillar-desc">People creating meaningful things — and the ideas and obsessions behind what they build.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Glamscience</div>
+        <div class="footer-taglines">For the deeply curious.</div>
+      </div>
+      <div class="footer-social">
+        <a href="#">Instagram</a>
+        <a href="#">X</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 GlamScience. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

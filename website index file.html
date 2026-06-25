@@ -331,13 +331,14 @@
       <div class="hero-divider"></div>
       <p class="hero-sub">GlamScience is a modern media brand for the deeply curious. We explore the ideas, technologies, and people shaping the future of our world.</p>
 
-      <!-- REPLACE button onclick with your Beehiiv form submission -->
-      <div class="form-row">
-        <input class="form-input" type="email" placeholder="Enter your email" />
-        <button class="form-btn" type="button">Subscribe</button>
-      </div>
-      <p class="form-note">No spam. Unsubscribe anytime.</p>
-    </section>
+     
+    <form class="form-row" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="09ce3a63-c37d-4b90-bfe0-5e17976ddb0f" />
+      <input type="hidden" name="subject" value="New GlamScience Subscriber" />
+      <input type="hidden" name="redirect" value="https://glamscience.org" />
+      <input class="form-input" type="email" name="email" placeholder="Enter your email" required />
+      <button class="form-btn" type="submit">Subscribe</button>
+    </form>
 
     <section class="pillars-section">
       <div class="pillars-eyebrow">What we cover</div>
